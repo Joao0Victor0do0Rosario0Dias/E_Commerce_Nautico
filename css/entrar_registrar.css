@@ -20,7 +20,7 @@ main{
     height: 100vh;
     gap: 10%;
 }
-a{
+.entrar{
     width: 250px;
     height: 50px;
     border-radius: 15px;
@@ -31,9 +31,16 @@ a{
     color: black;
     align-items: center;
     display: flex;
-
 }
-a:active{
+.entrar:active{
     background-color: darkblue;
+    color: white;
+}
+a{
+    margin: 10px;
+    color: white;
+    text-decoration: none;
+}
+h1{
     color: white;
 }
