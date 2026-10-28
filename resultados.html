@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados da pesquisa</title>
+    <link rel="stylesheet" href="assets/fonts/remixicon.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <h1>Logo</h1>
+        <div class="search" id="search">
+            <textarea wrap="off" rows="1"name="pesquisa" placeholder="Pesquisar" id="textarea"></textarea>
+            <a href="./resultados.html">
+                <i class="ri-send-plane-fill"></i>
+            </a>
+        </div>
+        <div class="rownav">
+            <i class="ri-add-circle-line"></i>
+            <p>Anunciar</p>
+        </div>
+        <div class="rownav">
+            <i class="ri-question-mark"></i>
+            <p>Sobre nós</p>
+        </div>
+        <div class="botaoentrar"> Entrar</div>
+    </nav>
+    <main>
+        <h2>Buscas por: ...</h2>
+        
+        <produto-horizontal
+              titulo="Produto A" 
+              preco="R$: 14000"
+              img="img/placeholder.png"
+              >
+        </produto-horizontal>
+        <div style="width: 90%; height: 130px; border: 1px solid  black; border-radius: 15px; text-align: center; margin: auto; display: flex; flex-direction: row; justify-content: start; padding: 10px;">
+            <div style="position: relative;">
+                <img src="img/placeholder.png" alt="placeholder" style=" width: 180px; height: 125px; padding: 5px; object-fit: fill;">
+                <i class="ri-heart-line" style="position: absolute;top: 1; right: 0; color: grey; font-size: 25px;"></i>
+            </div>
+            <div style="flex-direction: column; padding-left: 10px;">
+                <p style="font-size: large;">${titulo}</p>
+                <p style="font-size: larger;">${preco}</p>
+            </div>
+            <avaliacao-por-estrelas nota="7"></avaliacao-por-estrelas>
+        </div>
+        
+    </main>    
+    <script src="js/script.js"></script>
+</body>
+</html>

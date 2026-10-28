@@ -51,6 +51,37 @@ class ProdutoHorizontal extends HTMLElement {
     `;
   }
 }
+class AvaliacaoPorEstrelas extends HTMLElement {
+  constructor() {
+    super();
+  }
 
+  connectedCallback() {
+    const nota = this.getAttribute('nota') || '0';
+
+    let starhalf=false;
+    let notaInt = parseInt(nota);
+    let inner = '<div style="display: flex; flex-direction: row;">';
+    for (let i=1; i<=10; i++){
+      if (i==notaInt && i%2!=0){
+          inner+= '<i class="ri-star-half-line"></i>'; 
+          console.log(`${i}: star-half cond 1`);
+          starhalf=true;
+      } else if (i<=notaInt && i%2==0){
+          inner+= '<i class="ri-star-fill"></i>'; 
+          console.log(`${i}: star-fill cond 2`);
+      } else if (i%2==0){
+          if(!starhalf){
+            inner+= '<i class="ri-star-line"></i>'; 
+            console.log(`${i}: star-fill cond 3`);
+          }
+          starhalf=false;
+      }
+    }
+    this.innerHTML = inner;
+  }
+}
 customElements.define('produto-vertical', ProdutoVertical);
 customElements.define('produto-horizontal', ProdutoHorizontal);
+customElements.define('avaliacao-por-estrelas', AvaliacaoPorEstrelas);
+
