@@ -29,14 +29,6 @@ nav p{
     margin-top: auto;
     margin-bottom: auto;
 }
-textarea{
-    display: flex;
-    margin-top: auto;
-    margin-bottom: auto;
-    font-size: large;
-    background-color: transparent;
-    width: 70%;
-}
 .botaoentrar{
     background-color: azure;
     color: black;
@@ -117,8 +109,8 @@ textarea{
     font-size: large;
     padding: 10px;
     border: none;
+    background-color: transparent;
     outline: none; 
-
 }
 .botaoentrar{
     background-color: azure;
