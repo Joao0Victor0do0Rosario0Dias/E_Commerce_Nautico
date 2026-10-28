@@ -28,25 +28,29 @@
     </nav>
     <main>
         <h2>Buscas por: ...</h2>
-        
+        <div class="productscolumn">
         <produto-horizontal
               titulo="Produto A" 
               preco="R$: 14000"
               img="img/placeholder.png"
+              nota='7'
               >
         </produto-horizontal>
-        <div style="width: 90%; height: 130px; border: 1px solid  black; border-radius: 15px; text-align: center; margin: auto; display: flex; flex-direction: row; justify-content: start; padding: 10px;">
-            <div style="position: relative;">
-                <img src="img/placeholder.png" alt="placeholder" style=" width: 180px; height: 125px; padding: 5px; object-fit: fill;">
-                <i class="ri-heart-line" style="position: absolute;top: 1; right: 0; color: grey; font-size: 25px;"></i>
-            </div>
-            <div style="flex-direction: column; padding-left: 10px;">
-                <p style="font-size: large;">${titulo}</p>
-                <p style="font-size: larger;">${preco}</p>
-            </div>
-            <avaliacao-por-estrelas nota="7"></avaliacao-por-estrelas>
+        <produto-horizontal
+              titulo="Produto B" 
+              preco="R$: 40000"
+              img="img/placeholder.png"
+              nota='9'
+              >
+        </produto-horizontal>
+        <produto-horizontal
+              titulo="Produto C" 
+              preco="R$: 60000"
+              img="img/placeholder.png"
+              nota='4'
+              >
+        </produto-horizontal>
         </div>
-        
     </main>    
     <script src="js/script.js"></script>
 </body>

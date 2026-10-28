@@ -195,3 +195,8 @@ a{
     text-decoration: none;
 }
 /*Página Vendas */
+.productscolumn{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
