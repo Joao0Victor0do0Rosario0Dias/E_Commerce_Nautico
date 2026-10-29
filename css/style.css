@@ -226,12 +226,20 @@ a{
     border: 1px solid black;
     outline:2px solid white;
 }
-.rowuser{
+.rowpadrao{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     text-align: center;
+    margin-top: 5px;
+}
+.columnpadrao{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
 .centro{
     margin: auto;
@@ -239,4 +247,41 @@ a{
     max-width: 1000px;
     text-align: center;
     margin-top: 15px;
+}
+.addfoto{
+    width: 250px; 
+    height: 250px; 
+    background-color: cornflowerblue; 
+    border-radius: 15px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: larger;
+}
+.textfieldprodutos{
+    display: flex;
+    font-size: large;
+    width: 80%;
+    border-radius: 15px;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.campodescricao{
+    display: flex;
+    font-size: large;
+    width: 80%;
+    height: 400px;
+    border-radius: 15px;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
