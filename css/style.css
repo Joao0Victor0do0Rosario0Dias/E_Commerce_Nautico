@@ -99,6 +99,7 @@ nav .rownav{
     display: flex;
     margin-top: auto;
     margin-bottom: auto;
+    color: white;
 }
 textarea{
     display: flex;
@@ -191,4 +192,51 @@ a{
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+.rowuser .ri-user-line{
+    font-size: 50px;
+}
+
+.blocodesenhas{
+    width: 300px;
+    height: 300px;
+    background-color: cadetblue;
+    
+}
+.senha{
+    display: flex;
+    font-size: large;
+    width: 60%;
+    border-radius: 15px;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid black;
+    outline:2px solid white;
+    margin-top: 15px;
+}
+.senha:focus{
+    border:2px solid gray;  
+    
+}   
+.email{
+    width: 60%;
+    border-radius: 15px;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid black;
+    outline:2px solid white;
+}
+.rowuser{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+.centro{
+    margin: auto;
+    display: flex;
+    max-width: 1000px;
+    text-align: center;
+    margin-top: 15px;
 }
