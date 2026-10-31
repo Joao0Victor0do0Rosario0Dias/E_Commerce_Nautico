@@ -187,7 +187,6 @@ h2{
 a{
     text-decoration: none;
 }
-/*Página Vendas */
 .productscolumn{
     display: flex;
     flex-direction: column;
@@ -284,4 +283,33 @@ a{
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+.rowpadrao main {
+    width: 70vw;
+    padding: 15px;
+}
+aside{
+    background-color: cornflowerblue;
+    height: 80vh;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 15px;
+    margin-bottom: auto;
+    margin-top: 30px;
+    margin-right: 10px;
+}
+.estrelas{
+    margin: auto;
+    font-size: 30px;
+}
+.botaoproduto{
+    background-color: goldenrod;
+    border-radius: 15px;
+    padding: 15px;
+}
+.botaomaismenos{
+    font-size: 30px;
+    text-align: center;
 }

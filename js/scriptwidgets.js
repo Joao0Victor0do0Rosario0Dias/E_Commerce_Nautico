@@ -8,13 +8,22 @@ class ProdutoVertical extends HTMLElement {
       const titulo = this.getAttribute('titulo') || 'Título Padrão';
       const preco = this.getAttribute('preco') || 'R$:??';
       const img = this.getAttribute('img') || 'img/placeholder.png';
+      const nota = this.getAttribute('nota') || '0';
+      let notaInt = parseInt(nota);
   
       this.innerHTML = `
-        <div style="width: 200px; height: 275px; border: 1px solid  black; border-radius: 15px; text-align: center;">
-          <img src=${img} alt="placeholder" style=" width: 180px; height: 125px; margin: auto; padding: 5px; object-fit: fill;">
-          <p>${titulo}</p>
-          <p style="font-size: large;">${preco}</p>
-        </div>
+        <a href="produto.html" style="width: 200px; height: 275px; border: 1px solid black; border-radius: 15px; text-align: center; margin: auto; display: flex; justify-content: start; padding: 10px; flex-direction:column; color: black">
+              <img src=${img} alt="placeholder" style=" width: 180px; height: 125px; padding: 5px; object-fit: fill;">
+          
+              <div style="flex-direction: column; padding-left: 10px;">
+                  <p style="font-size: large;">${titulo}</p>
+                  <p style="font-size: larger;">${preco}</p>
+                  <div class="rowpadrao">              
+                  <avaliacao-por-estrelas nota=${notaInt}></avaliacao-por-estrelas>
+                  <i class="ri-heart-line" style="color: grey; font-size: 25px;"></i>
+                  </div>
+              </div>
+          </a>
       `;
     }
   }
@@ -31,7 +40,7 @@ class ProdutoVertical extends HTMLElement {
       let notaInt = parseInt(nota);
   
       this.innerHTML = `
-        <div style="width: 90%; height: 130px; border: 1px solid  black; border-radius: 15px; text-align: center; margin: auto; display: flex; flex-direction: row; justify-content: start; padding: 10px;">
+        <a href="produto.html" style="width: 90%; height: 130px; border: 1px solid  black; border-radius: 15px; text-align: center; margin: auto; display: flex; flex-direction: row; justify-content: start; padding: 10px; color: black">     
               <div style="position: relative;">
                   <img src=${img} alt="placeholder" style=" width: 180px; height: 125px; padding: 5px; object-fit: fill;">
                   <i class="ri-heart-line" style="position: absolute;top: 1; right: 0; color: grey; font-size: 25px;"></i>
@@ -42,7 +51,7 @@ class ProdutoVertical extends HTMLElement {
                   <avaliacao-por-estrelas nota=${notaInt}></avaliacao-por-estrelas>
               </div>
               
-          </div>
+          </a>
       `;
     }
   }
@@ -100,3 +109,10 @@ class ProdutoVertical extends HTMLElement {
   
   
   
+
+
+
+
+
+
+
