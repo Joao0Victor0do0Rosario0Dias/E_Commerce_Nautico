@@ -4,15 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/remixicon.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div style="display: flex; flex-direction: row">
-        <div style="display: flex; flex-direction: column; background-color: aqua; height: 100vh; width: 50vw;">
+    <div class="rowpadrao">
+        <div class="caixapagamento">
+            <textarea class="textfieldpagamentos" placeholder="E-mail" id="" wrap="off" rows="1"></textarea>
+            <textarea class="textfieldpagamentos" placeholder="Nome" id="" wrap="off" rows="1"></textarea>
+            <textarea class="textfieldpagamentos" placeholder="CEP" id="" wrap="off" rows="1"></textarea>
+            <textarea class="textfieldpagamentos" placeholder="Código do cartão" id="" wrap="off" rows="1"></textarea>
+            <div class="rowpadrao">
+                <textarea class="textfieldpagamentos" placeholder="Validade" id=""  wrap="off" rows="1"></textarea>
+                <div class="espaco"></div>
+                <textarea class="textfieldpagamentos" placeholder="CVV" id="" wrap="off" rows="1"></textarea>
+            </div>
+        </div>
+        <div class="caixapagamento2">
+            <h2>Informações do produto</h2>
+            <div class="rowpadrao">
+                <img src="img/placeholder.png" style="width: 250px;">
+                <div class="columnpadrao">
+                    <h3>Nome do produto</h3>
+                    <p>R$:20000</p>
+                </div>
+            </div>
+            <div class="columnpadrao">
+                <h2>Pagar com:</h2>
+                <div class="rowpagamento">
+                    <input type="radio" name="tipopagamento"> 
+                    <p>Cartão</p>
+                </div>
+                <div class="rowpagamento">
+                    <input type="radio" name="tipopagamento"> 
+                    <p>Pix</p>
+                </div>
+            </div>
+            <a href="pagamento.html" class="botaoproduto">Pagar</a>
 
         </div>
-         <div style="display: flex; flex-direction: column; background-color: blue; height: 100vh; width: 50vw;">
-
-         </div>
     </div>
 </body>
 </html>

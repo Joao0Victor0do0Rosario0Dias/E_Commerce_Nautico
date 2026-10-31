@@ -95,7 +95,7 @@ nav{
     padding-right: 15px;
     justify-content: space-around;
 }
-nav .rownav{
+nav .rowpadrao{
     display: flex;
     margin-top: auto;
     margin-bottom: auto;
@@ -146,18 +146,11 @@ footer{
     padding-top: 15px;
     padding-left: 15px;
 }
-.rownav{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
-    height: 50px;
-}
-.rownav h3{
+
+.rowpadrao h3{
     font-size: large;
 }
-.rownav i{
+.rowpadrao i{
     font-size: 25px;
     color: white;
 }
@@ -308,8 +301,58 @@ aside{
     background-color: goldenrod;
     border-radius: 15px;
     padding: 15px;
+    color: black;
 }
 .botaomaismenos{
     font-size: 30px;
     text-align: center;
+}
+.textfieldpagamentos{
+    display: flex;
+    font-size: large;
+    width: 80%;
+    border-radius: 15px;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.espaco{
+    width: 30px;
+    height: 30px;
+}
+.caixapagamento{
+    display: flex; 
+    flex-direction: column; 
+    background-color: cornflowerblue; 
+    height: 100vh;
+    width: 50vw; 
+    padding: 5px;
+    justify-content: space-around;
+}
+.rowpagamento{
+    width: 25%; 
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between; 
+    margin: 5px;
+    margin-left: 25px;
+    text-align: center;
+
+}
+.caixapagamento2{
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+    background-color: white; 
+    height: 100vh; 
+    width: 50vw;
+}
+.rowpagamento p{
+    font-size: 20px;
+}
+.rowpagamento input{
+    transform: scale(1.5);
 }
