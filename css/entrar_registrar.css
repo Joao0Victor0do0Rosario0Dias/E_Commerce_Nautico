@@ -4,7 +4,7 @@ html, body{
     overflow-x: hidden;
       background: linear-gradient(to right, rgb(26, 26, 223), rgb(89, 133, 255));
 }
-textarea{
+input[type="text"], input[type="password"]{
     display: flex;
     font-size: large;
     width: 60%;
@@ -19,6 +19,12 @@ main{
     width: 100vw;
     height: 100vh;
     gap: 10%;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .entrar{
     width: 250px;
@@ -37,10 +43,23 @@ main{
     color: white;
 }
 a{
-    margin: 10px;
     color: white;
     text-decoration: none;
 }
-h1{
+header{
+    color: white;
+    font-size: xx-large;
+    text-align: center;
+}
+label{
+    font-size: large;
+    color: white;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+p{
     color: white;
 }

@@ -7,19 +7,26 @@
     <link rel="stylesheet" href="css/entrar_registrar.css">
 </head>
 <body>
+    <header>Registrar</header>
     <main>
-        <h1>Registrar</h1>
-        <textarea wrap="off" rows="1" name="" id="" placeholder="E-mail"></textarea>
-        <textarea wrap="off" rows="1" name="" id="" placeholder="Senha"></textarea>
-        <textarea wrap="off" rows="1" name="" id="" placeholder="Digite a senha novamente"></textarea>
+        <form action="registrar" id="registrar">
+            <label for="email">E-mail</label><br>
+            <input type="text" id="email" name="email"><br>
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" minlength="8" maxlength="63" name="senha">
+            <br>
+            <label for="confirmacaosenha">Digite a senha novamente</label>
+            <input type="password" id="confirmacaosenha" name="confirmacaosenha"><br>
+            <div class="row">
+                <p>Mostrar senha:</p>
+                <input type="checkbox" id="mostrarsenha">
+            </div>
+            <div class="entrar" href="./index.html" id="btnregistrar">Registrar</div>
+        </form>
 
-        <div>
-            <a class="entrar" href="index.html">Registrar</a>
-            <a href="entrar.html">Já possui conta, entrar</a>
-        </div>
-        
-       
-        
+        <a href="entrar.html">Já possui conta, entrar</a>
+      
+        <script src="js/script.js"></script>
     </main>
     
 </body>
