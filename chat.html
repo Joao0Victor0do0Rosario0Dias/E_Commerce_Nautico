@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chat com vendedor</title>
+    <link rel="icon" type="image/png" href="img/logo.png">
     <link rel="stylesheet" href="assets/fonts/remixicon.css">
     <style>
         html, body{
@@ -67,6 +68,27 @@
             font-size: 40px;
             margin: 5px;
         }
+        .mensagens {
+            width: 100%;
+            flex: 1;
+            overflow-y: auto;
+            padding: 15px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .balao-mensagem {
+            align-self: flex-end;
+            background-color: #0084ff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 18px 18px 2px 18px;
+            max-width: 70%;
+            word-wrap: break-word;
+            font-size: 15px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+        }
     </style>
 </head>
 <body>
@@ -77,11 +99,44 @@
         </header>
         <div class="mensagens"></div>
         <div class="tabmensagem">
-            <div class="rowpadrao">
-                <textarea name="" id=""></textarea>
-                <i class="ri-send-plane-fill"></i>
+           <div class="rowpadrao">
+                <textarea name="" id="textoMensagem" placeholder="Digite uma mensagem..."></textarea>
+                <i class="ri-send-plane-fill" id="btnEnviar" style="cursor: pointer;"></i>
             </div>
         </div>
     </div>
+    <script>
+        const btnEnviar = document.getElementById('btnEnviar');
+        const campoTexto = document.getElementById('textoMensagem');
+        const containerMensagens = document.querySelector('.mensagens');
+
+        function enviarMensagem() {
+            const mensagem = campoTexto.value.trim();
+            if (mensagem === '') return;
+
+            // Cria o balão de mensagem
+            const balao = document.createElement('div');
+            balao.className = 'balao-mensagem';
+            balao.textContent = mensagem;
+
+            // Adiciona na tela e limpa o campo
+            containerMensagens.appendChild(balao);
+            campoTexto.value = '';
+
+            // Rola a conversa até o final automaticamente
+            containerMensagens.scrollTop = containerMensagens.scrollHeight;
+        }
+
+        // Clique no botão de enviar
+        btnEnviar.addEventListener('click', enviarMensagem);
+
+        // Pressionar a tecla Enter (sem Shift)
+        campoTexto.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                enviarMensagem();
+            }
+        });
+    </script>
 </body>
 </html>

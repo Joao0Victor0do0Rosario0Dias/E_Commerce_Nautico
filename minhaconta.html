@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Minha conta</title>
+    <link rel="icon" type="image/png" href="img/logo.png">
     <link rel="stylesheet" href="assets/fonts/remixicon.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -22,9 +23,13 @@
         
     <main>
         <h2>Minhas compras</h2>
+        <lista-de-produtos
+          tipo="produtosComprados"
+          estilo="vertical">
+        </lista-de-produtos>
         <h2>Minhas vendas</h2>
         <lista-de-produtos
-          tipo="favoritos"
+          tipo="produtosVendidos"
           estilo="vertical">
         </lista-de-produtos>
         <h2>Meus favoritos</h2>

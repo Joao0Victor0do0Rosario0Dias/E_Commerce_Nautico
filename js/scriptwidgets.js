@@ -112,21 +112,49 @@ function selecionarProduto(id){
   localStorage.setItem("produtoSelect",id);
   console.log("Produto selecionado");
 }
+function alterarQuantidade(mudanca) {
+    let novaQtd = quantidadeSelecionada + mudanca;
+    if (novaQtd >= 1) { 
+    
+        quantidadeSelecionada = novaQtd;
+        
+        const qtdEl = document.getElementById("quantidadeProduto");
+        if (qtdEl) qtdEl.textContent = quantidadeSelecionada;
+        
+        atualizarPrecoTotal();
+    }
+}
+function atualizarPrecoTotal() {
+    const precoTotal = (precoBaseProduto * quantidadeSelecionada) + freteCalculado;
+    
+    const precoEl = document.getElementById("precoproduto");
+    if (precoEl) precoEl.textContent = `R$ ${precoTotal.toFixed(2)}`;
+    
+    localStorage.setItem("qtdCompra", quantidadeSelecionada);
+    localStorage.setItem("precoTotalCompra", precoTotal.toFixed(2));
+}
 function carregarProduto() {
+    const nomeEl = document.getElementById("nomeproduto");
+    if (!nomeEl) return;
+
     const idSelecionado = localStorage.getItem("produtoSelect");
     if (!idSelecionado) return;
 
-    const produto = anuncios.find(p => String(p.id) === String(idSelecionado));
+    const listaAnuncios = JSON.parse(localStorage.getItem('listaAnuncios')) || anuncios;
+    const produto = listaAnuncios.find(p => String(p.id) === String(idSelecionado));
     if (!produto) return;
 
-    const nomeEl = document.getElementById("nomeproduto");
-    if (nomeEl) nomeEl.textContent = produto.nome;
+    nomeEl.textContent = produto.nome;
 
     const descEl = document.getElementById("descricaoproduto");
     if (descEl) descEl.textContent = produto.descricao;
 
-    const precoEl = document.getElementById("precoproduto");
-    if (precoEl) precoEl.textContent = `R$ ${produto.preco}`;
+    precoBaseProduto = Number(produto.preco);
+    freteCalculado = Math.random() * (precoBaseProduto * 0.15);
+    
+    quantidadeSelecionada = 1; 
+    
+    atualizarPrecoTotal();
 
     const colPadrao = document.querySelector(".columnpadrao");
     if (colPadrao) {
@@ -162,7 +190,7 @@ function adicionarAnuncio() {
         alert("Por favor, preencha o Nome, Preço e Descrição!");
         return;
     }
-
+    let id = Date.now().toString();
     const novoProduto = {
         nome: nome,
         tipo: tipo,
@@ -177,7 +205,7 @@ function adicionarAnuncio() {
 
     anuncios.push(novoProduto);
     localStorage.setItem('listaAnuncios', JSON.stringify(anuncios));
-
+    GuardarOuRemoverArray(id, event, "produtosVendidos", false)
     alert("Anúncio adicionado com sucesso!");
     window.location.href = "index.html";
     document.getElementById("nomeNovo").value = "";
@@ -190,7 +218,9 @@ function carregarPagamento() {
     const idSelecionado = localStorage.getItem("produtoSelect");
     if (!idSelecionado) return;
 
-    const produto = anuncios.find(p => String(p.id) === String(idSelecionado));
+    const listaAnuncios = JSON.parse(localStorage.getItem('listaAnuncios')) || anuncios;
+    const produto = listaAnuncios.find(p => String(p.id) === String(idSelecionado));
+    
     if (!produto) return;
 
     const imgEl = document.getElementById("imgpagamento");
@@ -199,8 +229,14 @@ function carregarPagamento() {
     const nomeEl = document.getElementById("nomepagamento");
     if (nomeEl) nomeEl.textContent = produto.nome;
 
+    const precoTotal = localStorage.getItem("precoTotalCompra") || produto.preco;
+    const qtd = localStorage.getItem("qtdCompra") || 1;
+
     const precoEl = document.getElementById("precopagamento");
-    if (precoEl) precoEl.textContent = `R$ ${produto.preco}`;
+    if (precoEl) precoEl.textContent = `R$ ${precoTotal}`;
+    
+    const qtdEl = document.getElementById("qtdpagamento");
+    if (qtdEl) qtdEl.textContent = `Quantidade: ${qtd}`;
 }
 
 class ProdutoVertical extends HTMLElement {
@@ -326,7 +362,31 @@ class ListadeProdutos extends HTMLElement {
                   onclick="selecionarProduto('${item['id']}')"
                   ></produto-${estilo}>`;
           }
-      } else{
+      } else if (tipo == "produtosComprados") {
+        let comprados = obterArray('produtosComprados');
+          for (let item of comprados) {
+              inner += `<produto-${estilo} 
+                  titulo="${item['nome']}" 
+                  preco="${item['preco']}" 
+                  img="${item['capa']}" 
+                  nota="${item['classificacao']}"
+                  id="${item['id']}"
+                  onclick="selecionarProduto('${item['id']}')"
+                  ></produto-${estilo}>`;
+          }
+      } else if (tipo == "produtosVendidos"){
+        let vendidos = obterArray('produtosVendidos');
+          for (let item of vendidos) {
+              inner += `<produto-${estilo} 
+                  titulo="${item['nome']}" 
+                  preco="${item['preco']}" 
+                  img="${item['capa']}" 
+                  nota="${item['classificacao']}"
+                  id="${item['id']}"
+                  onclick="selecionarProduto('${item['id']}')"
+                  ></produto-${estilo}>`;
+          }
+      }else{
         for (let item of anuncios){
           console.log(item);
           if (tipo==item['tipo'] ||item['tipo']=="tudo") {
@@ -342,7 +402,6 @@ class ListadeProdutos extends HTMLElement {
           }
         }
       }
-      
       this.innerHTML = inner+ '</div>';
     }
 }

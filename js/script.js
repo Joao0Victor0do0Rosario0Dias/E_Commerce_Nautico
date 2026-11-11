@@ -72,3 +72,7 @@ function logar(){
         console.log('Senha incorreta');
     }
 }
+let quantidadeSelecionada = 1;
+let precoBaseProduto = 0;
+let freteCalculado = 0;
+
