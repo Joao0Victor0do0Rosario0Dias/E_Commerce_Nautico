@@ -10,32 +10,31 @@
 </head>
 <body>
      <nav>
-      <img src="img/logo.png" alt="Logo de um barco em um carrinho", width="75px" height="75px" style="margin-top: auto;margin-bottom: auto;">
-      <div class="search" id="search">
-          <textarea wrap="off" rows="1"name="pesquisa" placeholder="Pesquisar" id="textarea"></textarea>
-          <a href="./resultados.html">
-              <i class="ri-send-plane-fill"></i>
-          </a>
-      </div>
-      <a class="rowpadrao" href="anunciarproduto.html">
-          <i class="ri-add-circle-line"></i>
-          <p>Anunciar</p>
-      </a>
-      <a class="rowpadrao" href="sobrenos.html">
-          <i class="ri-question-mark"></i>
-          <p>Sobre nós</p>
-      </a>
-      <a href="minhaconta.html" class="botaoentrar" id="minhaconta"> Minha conta</a>
-      <a href="entrar.html" class="botaoentrar" id="botaoentrar"> Entrar</a>
+        <img src="img/logo.png" alt="Logo de um barco em um carrinho" width="75px" height="75px" style="margin-top: auto;margin-bottom: auto;">
+        <div class="search" id="search">
+            <textarea wrap="off" rows="1" name="pesquisa" placeholder="Pesquisar" id="textarea"></textarea>
+            <a href="./resultados.html" onclick="executarBusca(event)">
+                <i class="ri-send-plane-fill"></i>
+            </a>
+        </div>
+        <a class="rowpadrao" href="anunciarproduto.html">
+            <i class="ri-add-circle-line"></i>
+            <p>Anunciar</p>
+        </a>
+        <a class="rowpadrao" href="sobrenos.html">
+            <i class="ri-question-mark"></i>
+            <p>Sobre nós</p>
+        </a>
+        <a href="minhaconta.html" class="botaoentrar" id="minhaconta"> Minha conta</a>
+        <a href="entrar.html" class="botaoentrar" id="botaoentrar"> Entrar</a>
     </nav>    
     <main>
-        <h2>Buscas por: ...</h2>
+        <h2 id="termoBuscaTitulo">Buscas por: ...</h2>
         <lista-de-produtos
-          tipo="Barco"
+          tipo="busca"
           estilo="horizontal">
         </lista-de-produtos>
-       
-    </main>    
+    </main>
     <script src="js/script.js"></script>
     <script src="js/scriptwidgets.js"></script>
 </body>

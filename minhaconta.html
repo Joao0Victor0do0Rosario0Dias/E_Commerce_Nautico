@@ -11,16 +11,22 @@
 <body>
     <header class="contaheader">
         <div class="rowcentro">
-            <i class="ri-user-line" style="color: black;" id="perfil"></i>
-            <h1>Minha conta</h1>
+            <i class="ri-user-line" style="color: white;" id="perfil"></i>
+            <h1 style="color: white">Minha conta</h1>
         </div>
         <div class="blocodesenhas">
-            <p class="email">email@email.com</p>
-            <textarea  wrap="off" rows="1" name="" id="" class="senha" placeholder="senha"></textarea>
-            <textarea  wrap="off" rows="1" name="" id="" class="senha" placeholder="senha"></textarea>
+            <p class="email" id="emailusuario"></p>
+
+            <textarea wrap="off" rows="1" id="novaSenha" class="senha" placeholder="Nova senha"></textarea>
+            <textarea wrap="off" rows="1" id="confirmarNovaSenha" class="senha" placeholder="Confirmar nova senha"></textarea>
+
+            <div style="display: flex; gap: 10px; margin-top: 10px;">
+                <button onclick="alterarSenha()" style="padding: 8px 15px; cursor: pointer; border-radius: 5px; border: 1px solid white; background: #333; color: white;">Alterar Senha</button>
+                <button onclick="sairDaConta()" style="padding: 8px 15px; cursor: pointer; border-radius: 5px; border: none; background: #dc3545; color: white;">Sair da conta</button>
+            </div>
         </div>
     </header>    
-        
+
     <main>
         <h2>Minhas compras</h2>
         <lista-de-produtos
@@ -37,8 +43,8 @@
           tipo="favoritos"
           estilo="vertical">
         </lista-de-produtos>
-    
     </main>
+    <script src="js/script.js"></script>
     <script src="js/scriptwidgets.js"></script>
 
 </body>

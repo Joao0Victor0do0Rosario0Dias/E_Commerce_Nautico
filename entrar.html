@@ -9,17 +9,20 @@
 </head>
 <body>
     <main>
-        <header>Entar</header>
-        <form>
+        <header>Entrar</header>
+        <form id="formEntrar">
             <label for="email">E-mail</label>
-            <input type="text" id="email"><br>
+            <input type="text" id="email" name="email"><br>
+
             <label for="senha">Senha</label>
-            <input type="password" id="senha"><br>
-            <a class="entrar" href="./index.html">Entrar</a>
+            <input type="password" id="senha" name="senha"><br>
+
+            <div class="entrar" id="btnlogar" style="cursor: pointer;">Entrar</div>
         </form>
-        
+
         <a href="./registrar.html">Não possui conta, registrar</a>
-        
+
+        <script src="js/script.js"></script>
     </main>
     
 </body>

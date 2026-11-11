@@ -291,6 +291,9 @@ a{
     margin-top: 20px;
     margin-bottom: 20px;
 }
+#minhaconta{
+    display: none;
+}
 .rowpadrao main {
     width: 70vw;
     padding: 15px;

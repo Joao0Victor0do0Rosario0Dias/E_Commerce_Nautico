@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     carregar_curtidas();
     carregarProduto();
     carregarPagamento(); 
+    carregarBusca();
 });
 
 let anunciosOriginais = [
@@ -238,7 +239,25 @@ function carregarPagamento() {
     const qtdEl = document.getElementById("qtdpagamento");
     if (qtdEl) qtdEl.textContent = `Quantidade: ${qtd}`;
 }
+function executarBusca(event) {
+    if (event) event.preventDefault();
+    const campo = document.getElementById("textarea");
+    if (!campo) return;
+    
+    const termo = campo.value.trim();
+    localStorage.setItem("termoBusca", termo);
+    window.location.href = "resultados.html";
+}
+function carregarBusca() {
+    const tituloEl = document.getElementById("termoBuscaTitulo");
+    if (!tituloEl) return;
 
+    const termo = localStorage.getItem("termoBusca") || "";
+    const campo = document.getElementById("textarea");
+    if (campo && termo) campo.value = termo;
+
+    tituloEl.textContent = termo ? `Buscas por: ${termo}` : "Todos os produtos";
+}
 class ProdutoVertical extends HTMLElement {
     constructor() {
       super();
@@ -350,6 +369,7 @@ class ListadeProdutos extends HTMLElement {
       let tipo = this.getAttribute('tipo');
       let estilo = this.getAttribute('estilo') || 'vertical';
       let inner =`<div class="${(estilo == "horizontal")? "productscolumn" : "rowprodutos"}">`;
+      
       if (tipo == "favoritos") {
           let favoritos = obterArray('curtidos');
           for (let item of favoritos) {
@@ -386,11 +406,31 @@ class ListadeProdutos extends HTMLElement {
                   onclick="selecionarProduto('${item['id']}')"
                   ></produto-${estilo}>`;
           }
-      }else{
+      } else if (tipo == "busca") { // <-- NOVO BLOCO DE FILTRO DE BUSCA
+          let termo = (localStorage.getItem("termoBusca") || "").toLowerCase();
+          let resultados = anuncios.filter(item => 
+              item.nome.toLowerCase().includes(termo) || 
+              item.tipo.toLowerCase().includes(termo) ||
+              item.descricao.toLowerCase().includes(termo)
+          );
+
+          if (resultados.length === 0) {
+              inner += `<p style="padding: 20px;">Nenhum produto encontrado para "${termo}".</p>`;
+          } else {
+              for (let item of resultados) {
+                  inner += `<produto-${estilo} 
+                      titulo="${item['nome']}" 
+                      preco="${item['preco']}" 
+                      img="${item['capa']}" 
+                      nota="${item['classificacao']}"
+                      id="${item['id']}"
+                      onclick="selecionarProduto('${item['id']}')"
+                      ></produto-${estilo}>`;
+              }
+          }
+      } else {
         for (let item of anuncios){
-          console.log(item);
-          if (tipo==item['tipo'] ||item['tipo']=="tudo") {
-            console.log("true")
+          if (tipo==item['tipo'] || item['tipo']=="tudo") {
             inner += `<produto-${estilo} 
               titulo="${item['nome']}" 
               preco="${item['preco']}" 
