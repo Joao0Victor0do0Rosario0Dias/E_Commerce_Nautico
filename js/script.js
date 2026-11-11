@@ -5,10 +5,10 @@ const btnmostrarsenha = document.getElementById('mostrarsenha');
 const botaoentrar = document.getElementById('botaoentrar');
 const formulario = document.getElementById('registrar');
 const campoconfirmacaosenha = document.getElementById('confirmacaosenha');
-const camposenha = document.getElementById('senha');1
+const camposenha = document.getElementById('senha');
 document.addEventListener('DOMContentLoaded', carregarbotao);
-btnregistrar.addEventListener('click',registrar)
-btnmostrarsenha.addEventListener('change',mostrarsenha)
+btnregistrar?.addEventListener('click',registrar);
+btnmostrarsenha?.addEventListener('change',mostrarsenha);
 
 let estadoborda=false;
 let estadosenha=false;
@@ -18,7 +18,7 @@ textarea.addEventListener('focus', borda);
 
 function carregarbotao(){
   const emailatual = localStorage.getItem('emailatual');
-  console.log(`emailatual: ${emailatual}`)
+  console.log(`emailatual: ${emailatual}`);
   if (emailatual) {
     document.getElementById('botaoentrar').style.display = "none";
   }
@@ -64,11 +64,11 @@ function logar(){
 
     let emaildigitado = formdata.get('email');
     let senhadigitado = formdata.get('senha');
-    let emailregistrado = localStorage.getItem('emailatual')
-    let  = localStorage.getItem('senhaatual')
+    let emailregistrado = localStorage.getItem('emailatual');
+    let  = localStorage.getItem('senhaatual');
     if (emaildigitado==emailregistrado && senhadigitado==senharegistrado){
-        console.log('logado')
+        console.log('logado');
     } else{
-        console.log('Senha incorreta')
+        console.log('Senha incorreta');
     }
 }

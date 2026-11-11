@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fonts/remixicon.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="rowpadrao">
-        <div class="caixapagamento">
+        <div class="caixapagamento" id="caixapagamento">
             <textarea class="textfieldpagamentos" placeholder="E-mail" id="" wrap="off" rows="1"></textarea>
             <textarea class="textfieldpagamentos" placeholder="Nome" id="" wrap="off" rows="1"></textarea>
             <textarea class="textfieldpagamentos" placeholder="CEP" id="" wrap="off" rows="1"></textarea>
@@ -24,26 +23,26 @@
         <div class="caixapagamento2">
             <h2>Informações do produto</h2>
             <div class="rowpadrao">
-                <img src="img/placeholder.png" style="width: 250px;">
+                <img src="img/placeholder.png" id="imgpagamento" style="width: 250px;">
                 <div class="columnpadrao">
-                    <h3>Nome do produto</h3>
-                    <p>R$:20000</p>
+                    <h3 id="nomepagamento">Nome do produto</h3>
+                    <p id="precopagamento">R$:20000</p>
                 </div>
             </div>
-            <div class="columnpadrao">
+                    <div class="columnpadrao">
                 <h2>Pagar com:</h2>
                 <div class="rowpagamento">
-                    <input type="radio" name="tipopagamento"> 
+                    <input type="radio" name="tipopagamento" id="radioCartao" checked> 
                     <p>Cartão</p>
                 </div>
                 <div class="rowpagamento">
-                    <input type="radio" name="tipopagamento"> 
+                    <input type="radio" name="tipopagamento" id="radioPix"> 
                     <p>Pix</p>
                 </div>
             </div>
-            <a href="pagamento.html" class="botaoproduto">Pagar</a>
-
+            <a href="index.html" id="pagamento" class="botaoproduto">Pagar</a>
         </div>
     </div>
+    <script src="js/scriptwidgets.js"></script>
 </body>
 </html>

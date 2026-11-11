@@ -24,10 +24,18 @@
             </div>
         </div>
         <div class="columnpadrao">
-            <textarea wrap="off" rows="1" name="" id="" placeholder="Preço" class="textfieldprodutos"></textarea>
-            <textarea wrap="off" rows="1" name="" id="" placeholder="CEP de busca" class="textfieldprodutos"></textarea>
-            <textarea wrap="off" rows="1" name="" id="" placeholder="Quantidade" class="textfieldprodutos"></textarea>
-            <textarea name="" id="" placeholder="CEP de busca" class="campodescricao"></textarea>
+            <textarea wrap="off" rows="1" id="nomeNovo" placeholder="Nome do Produto" class="textfieldprodutos"></textarea>
+            <select id="tipoNovo" class="textfieldprodutos" style="padding: 10px; margin-bottom: 5px;">
+                <option value="Barco">Barco</option>
+                <option value="Peça">Peça</option>
+                <option value="Acessorio">Acessório</option>
+            </select>
+            <textarea wrap="off" rows="1" id="precoNovo" placeholder="Preço" class="textfieldprodutos"></textarea>
+            <textarea wrap="off" rows="1" id="cepNovo" placeholder="CEP de busca" class="textfieldprodutos"></textarea>
+            <textarea wrap="off" rows="1" id="qtdNovo" placeholder="Quantidade" class="textfieldprodutos"></textarea>
+            <textarea id="descricaoNovo" placeholder="Descrição" class="campodescricao"></textarea>
+            
+            <button onclick="adicionarAnuncio()" style="padding: 15px; font-size: 16px; cursor: pointer; background: #000; color: #fff; border-radius: 8px;">Publicar Anúncio</button>
         </div>
     </div>
     <script src="js/scriptwidgets.js"></script>

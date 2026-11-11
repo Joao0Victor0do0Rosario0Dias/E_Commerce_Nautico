@@ -190,10 +190,16 @@ a{
 }
 
 .blocodesenhas{
-    width: 300px;
+    width: 90%;
     height: 300px;
-    background-color: cadetblue;
-    
+    text-align: center;
+    margin: auto;
+}
+.blocodesenhas textarea{
+    width: 90%;
+}
+#perfil{
+    font-size: 50px;
 }
 .senha{
     display: flex;
@@ -211,7 +217,7 @@ a{
     
 }   
 .email{
-    width: 60%;
+    width: 90%;
     border-radius: 15px;
     padding: 15px;
     background-color: white;
@@ -222,6 +228,14 @@ a{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    margin-top: 5px;
+}
+.rowcentro{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
     text-align: center;
     margin-top: 5px;
@@ -355,4 +369,8 @@ aside{
 }
 .rowpagamento input{
     transform: scale(1.5);
+}
+.contaheader{
+    height: 300px;
+    background-color: cornflowerblue;
 }

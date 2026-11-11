@@ -8,16 +8,33 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <main>
-        <div class="rowpadrao">
-        <i class="ri-user-line"></i>
+    <header class="contaheader">
+        <div class="rowcentro">
+            <i class="ri-user-line" style="color: black;" id="perfil"></i>
+            <h1>Minha conta</h1>
+        </div>
         <div class="blocodesenhas">
             <p class="email">email@email.com</p>
             <textarea  wrap="off" rows="1" name="" id="" class="senha" placeholder="senha"></textarea>
             <textarea  wrap="off" rows="1" name="" id="" class="senha" placeholder="senha"></textarea>
         </div>
-    </div>
-    </main>
+    </header>    
+        
+    <main>
+        <h2>Minhas compras</h2>
+        <h2>Minhas vendas</h2>
+        <lista-de-produtos
+          tipo="favoritos"
+          estilo="vertical">
+        </lista-de-produtos>
+        <h2>Meus favoritos</h2>
+        <lista-de-produtos
+          tipo="favoritos"
+          estilo="vertical">
+        </lista-de-produtos>
     
+    </main>
+    <script src="js/scriptwidgets.js"></script>
+
 </body>
 </html>
