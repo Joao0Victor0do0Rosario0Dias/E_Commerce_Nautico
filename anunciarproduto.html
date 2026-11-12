@@ -15,11 +15,13 @@
     <div class="columnpadrao">
         <div class="rowpadrao">
             <div class="columnpadrao">
-                <img src="img/placeholder.png" alt="" style="max-width: 800px;">
-                <lista-de-fotos 
-                fotos='["img/placeholder.png", "img/placeholder.png"]'></lista-de-fotos>
+                <img id="imgPreview" src="img/placeholder.png" alt="Prévia" style="max-width: 800px; max-height: 400px; object-fit: contain;">
+                <lista-de-fotos id="listaPreview" fotos='["img/placeholder.png"]'></lista-de-fotos>
             </div>
-            <div class="addfoto">
+
+            <input type="file" id="inputFoto" accept="image/*" multiple style="display: none;" onchange="processarFotos(event)">
+
+            <div class="addfoto" onclick="document.getElementById('inputFoto').click()" style="cursor: pointer;">
                 <i class="ri-add-circle-line" style="font-size: 120px;"></i>
                 Adicionar foto ou vídeo
             </div>
@@ -35,10 +37,11 @@
             <textarea wrap="off" rows="1" id="cepNovo" placeholder="CEP de busca" class="textfieldprodutos"></textarea>
             <textarea wrap="off" rows="1" id="qtdNovo" placeholder="Quantidade" class="textfieldprodutos"></textarea>
             <textarea id="descricaoNovo" placeholder="Descrição" class="campodescricao"></textarea>
-            
-            <button onclick="adicionarAnuncio()" style="padding: 15px; font-size: 16px; cursor: pointer; background: #000; color: #fff; border-radius: 8px;">Publicar Anúncio</button>
+
+            <button onclick="adicionarAnuncio(event)" style="padding: 15px; font-size: 16px; cursor: pointer; background: #000; color: #fff; border-radius: 8px;">Publicar Anúncio</button>
         </div>
     </div>
     <script src="js/scriptwidgets.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

@@ -11,58 +11,63 @@
 </head>
 <body>
     <header>
-        <nav>
-          <img src="img/logo.png" alt="Logo de um barco em um carrinho", width="75px" height="75px" style="margin-top: auto;margin-bottom: auto;">
-          <div class="search" id="search">
-              <textarea wrap="off" rows="1"name="pesquisa" placeholder="Pesquisar" id="textarea"></textarea>
-              <a href="./resultados.html" onclick="executarBusca(event)">
-                <i class="ri-send-plane-fill"></i>
-              </a>
-          </div>
-          <a class="rowpadrao" href="anunciarproduto.html">
-              <i class="ri-add-circle-line"></i>
-              <p>Anunciar</p>
+    <nav>
+      <img src="img/logo.png" alt="Logo de um barco em um carrinho" width="75px" height="75px" style="margin-top: auto;margin-bottom: auto;">
+      <div class="search" id="search">
+          <textarea wrap="off" rows="1" name="pesquisa" placeholder="Pesquisar" id="textarea"></textarea>
+          <a href="./resultados.html" onclick="executarBusca(event)">
+            <i class="ri-send-plane-fill"></i>
           </a>
-          <a class="rowpadrao" href="sobrenos.html">
-              <i class="ri-question-mark"></i>
-              <p>Sobre nós</p>
-          </a>
-          <a href="minhaconta.html" class="botaoentrar" id="minhaconta"> Minha conta</a>
-          <a href="entrar.html" class="botaoentrar" id="botaoentrar"> Entrar</a>
-        </nav>       
-        <div class="rowpadrao">
-            <h3>Categorias:</h3>
-            <p>Acessórios</p>
-            <p>Peças</p>
-            <p>Barcos</p>
-        </div>
-    </header>
+      </div>
+      <a class="rowpadrao" href="anunciarproduto.html">
+          <i class="ri-add-circle-line"></i>
+          <p>Anunciar</p>
+      </a>
+      <a class="rowpadrao" href="sobrenos.html">
+          <i class="ri-question-mark"></i>
+          <p>Sobre nós</p>
+      </a>
+      <a href="minhaconta.html" class="botaoentrar" id="minhaconta"> Minha conta</a>
+      <a href="entrar.html" class="botaoentrar" id="botaoentrar"> Entrar</a>
+    </nav>        
     <div class="rowpadrao">
-        <main>
-            <div class="columnpadrao">
-                <img src="img/placeholder.png" alt="" style="width: 60vw;">
-                <lista-de-fotos 
-                fotos='["img/placeholder.png", "img/placeholder.png"]'></lista-de-fotos>
+        <h3>Categorias:</h3>
+        <p>Acessórios</p>
+        <p>Peças</p>
+        <p>Barcos</p>
+    </div>
+</header>
+
+<div class="rowpadrao">
+    <main class="grid-produto">
+        <div class="columnpadrao area-fotos">
+            <img src="img/placeholder.png" alt="" style="width: 100%; max-width: 600px; margin: auto;">
+            <lista-de-fotos fotos='["img/placeholder.png", "img/placeholder.png"]'></lista-de-fotos>
+        </div>
+
+        <h2 id="nomeproduto" class="area-titulo">Produto A</h2>
+
+        <aside class="area-compra"> 
+            <h2 id="precoproduto">R$:14000</h2>
+            <p style="color: green; font-size: 14px; margin-top: -15px; font-weight: bold;">frete incluso</p>
+            <p>Unidades</p>
+            <div class="rowpadrao" style="width: 100px; margin: auto;">
+                <div class="botaomaismenos" onclick="alterarQuantidade(-1)" style="cursor: pointer;">−</div>
+                <p id="quantidadeProduto">1</p>
+                <div class="botaomaismenos" onclick="alterarQuantidade(1)" style="cursor: pointer;">+</div>
             </div>
-            <h2 id="nomeproduto">Produto A</h2>
-            <p id="descricaoproduto">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim molestiae itaque repudiandae adipisci, dolor, quae recusandae soluta, voluptatem doloribus ut beatae similique consequuntur officia quasi saepe eligendi suscipit impedit provident. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere veniam illum maxime ipsam? Doloribus beatae nam non doloremque deserunt impedit vitae repellendus, incidunt reprehenderit saepe modi dicta maxime neque ipsum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil doloremque, totam non facilis numquam, earum amet beatae voluptate et asperiores exercitationem quis, animi ipsum commodi repellendus accusamus nulla iure iusto. lorem[
+            <a href="pagamento.html" class="botaoproduto" style="display: block; margin-top: 15px;">Comprar</a>
+        </aside>
+
+        <div class="area-descricao">
+            <p id="descricaoproduto">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim molestiae itaque repudiandae adipisci, dolor, quae recusandae soluta, voluptatem doloribus ut beatae similique consequuntur officia quasi saepe eligendi suscipit impedit provident.
             </p>
             <h3>Dúvidas?</h3>
             <a href="chat.html" class="botaoproduto">Acessar chat</a>
-        </main>
-        <aside> 
-                <h2 id="precoproduto">R$:14000</h2>
-                <p style="color: green; font-size: 14px; margin-top: -15px; font-weight: bold;">frete incluso</p>
-                <p>Unidades</p>
-                <div class="rowpadrao" style="width: 100px; margin: auto;">
-                    <div class="botaomaismenos" onclick="alterarQuantidade(-1)" style="cursor: pointer;">−</div>
-                    <p id="quantidadeProduto">1</p>
-                    <div class="botaomaismenos" onclick="alterarQuantidade(1)" style="cursor: pointer;">+</div>
-                    
-                </div>
-                <a href="pagamento.html" class="botaoproduto">Comprar</a>
-        </aside>
-    </div>
+        </div>
+    </main>
+</div>
     <script src="js/scriptwidgets.js"></script>
     <script src="js/script.js"></script>
 

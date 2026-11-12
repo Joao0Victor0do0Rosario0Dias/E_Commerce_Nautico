@@ -4,7 +4,7 @@ html, body{
     overflow-x: hidden;
       background: linear-gradient(to right, rgb(26, 26, 223), rgb(89, 133, 255));
 }
-input[type="text"], input[type="password"]{
+input[type="email"], input[type="password"]{
     display: flex;
     font-size: large;
     width: 60%;

@@ -10,19 +10,23 @@
 <body>
     <header>Registrar</header>
     <main>
-        <form action="registrar" id="registrar">
+        <form id="registrar">
             <label for="email">E-mail</label><br>
-            <input type="text" id="email" name="email"><br>
+            <input type="email" id="email" name="email" required><br>
+                
             <label for="senha">Senha</label>
-            <input type="password" id="senha" minlength="8" maxlength="63" name="senha">
+            <input type="password" id="senha" minlength="6" maxlength="63" name="senha" required>
             <br>
+                
             <label for="confirmacaosenha">Digite a senha novamente</label>
-            <input type="password" id="confirmacaosenha" name="confirmacaosenha"><br>
+            <input type="password" id="confirmacaosenha" minlength="6" maxlength="63" name="confirmacaosenha" required><br>
+                
             <div class="row">
                 <p>Mostrar senha:</p>
                 <input type="checkbox" id="mostrarsenha">
             </div>
-            <div class="entrar" href="./index.html" id="btnregistrar">Registrar</div>
+            
+            <button type="submit" class="entrar" id="btnregistrar" style="cursor: pointer; border: none;">Registrar</button>
         </form>
 
         <a href="entrar.html">Já possui conta, entrar</a>
